@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7759358957946346732}
   - component: {fileID: 158071924933628874}
   - component: {fileID: 1957980506221289232}
+  - component: {fileID: -6861327911191231983}
   m_Layer: 0
   m_Name: red-bloon
   m_TagString: Untagged
@@ -125,3 +126,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0018815652, y: 0.0056450632}
   m_Size: {x: 0.33978647, y: 0.47978595}
   m_Direction: 0
+--- !u!114 &-6861327911191231983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014108283387822730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228f7c66db7a6334399785232cee0ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pathGameObjectName: path
