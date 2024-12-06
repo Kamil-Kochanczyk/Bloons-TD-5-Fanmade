@@ -6,7 +6,7 @@ public class AlongThePathMover : MonoBehaviour
     private string _pathGameObjectName = "path";
     private Transform[] _path = null;
     private int _targetPathPointIndex = -1;
-    private const float speed = 1.0f;
+    private const float _speed = 1.0f;
 
     private void Start()
     {
@@ -55,9 +55,9 @@ public class AlongThePathMover : MonoBehaviour
 
     private void MoveAlongThePath()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _path[_targetPathPointIndex].position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _path[_targetPathPointIndex].position, _speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, _path[_targetPathPointIndex].position) <= speed * Time.deltaTime)
+        if (Vector2.Distance(transform.position, _path[_targetPathPointIndex].position) <= _speed * Time.deltaTime)
         {
             _targetPathPointIndex++;
 
