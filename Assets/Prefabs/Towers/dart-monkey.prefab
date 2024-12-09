@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7773714484333203246}
   - component: {fileID: 1828329635656812596}
   - component: {fileID: 315723641217615719}
+  - component: {fileID: 4806301375662990145}
   m_Layer: 6
   m_Name: dart-monkey
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8656725359221620946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7226, y: 0.3617, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.063759, y: 1.063759, z: 1.063759}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -125,6 +126,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.07000001}
   m_Radius: 0.113195725
+--- !u!114 &4806301375662990145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656725359221620946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9912180dc61c7a488cd050ca7a9984c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3109315295260703144
 PrefabInstance:
   m_ObjectHideFlags: 0

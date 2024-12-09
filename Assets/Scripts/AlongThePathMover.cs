@@ -7,11 +7,13 @@ public class AlongThePathMover : MonoBehaviour
     private Transform[] _path = null;
     private int _targetPathPointIndex = -1;
     private const float _speed = 1.0f;
+    private Rigidbody2D _rb;
 
     private void Start()
     {
         try
         {
+            _rb = GetComponent<Rigidbody2D>();
             SetPath();
             transform.position = _path[0].position;
             _targetPathPointIndex = 1;
@@ -22,7 +24,7 @@ public class AlongThePathMover : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MoveAlongThePath();
     }
@@ -55,7 +57,7 @@ public class AlongThePathMover : MonoBehaviour
 
     private void MoveAlongThePath()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _path[_targetPathPointIndex].position, _speed * Time.deltaTime);
+        _rb.MovePosition(Vector2.MoveTowards(transform.position, _path[_targetPathPointIndex].position, _speed * Time.deltaTime));
 
         if (Vector2.Distance(transform.position, _path[_targetPathPointIndex].position) <= _speed * Time.deltaTime)
         {

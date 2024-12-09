@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - MonkeyPlacement
+  - TowerPlacement
   - Water
   - UI
-  - Monkey
-  - 
+  - Tower
+  - Bloon
   - 
   - 
   - 
@@ -44,7 +44,7 @@ TagManager:
   - name: Background
     uniqueID: 1764285223
     locked: 0
-  - name: Monkeys
+  - name: Towers
     uniqueID: 1955583955
     locked: 0
   - name: Bloons
