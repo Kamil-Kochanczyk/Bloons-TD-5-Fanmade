@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005530132892493245}
   m_Layer: 0
-  m_Name: checkpoint (38)
+  m_Name: pathpoint (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706403204550804824}
   m_Layer: 0
-  m_Name: checkpoint (33)
+  m_Name: pathpoint (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5961159430574278868}
   m_Layer: 0
-  m_Name: checkpoint (6)
+  m_Name: pathpoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3832149591242558535}
   m_Layer: 0
-  m_Name: checkpoint (34)
+  m_Name: pathpoint (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4743479552305480097}
   m_Layer: 0
-  m_Name: checkpoint (20)
+  m_Name: pathpoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3808539868856523890}
   m_Layer: 0
-  m_Name: checkpoint (22)
+  m_Name: pathpoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148812606364329053}
   m_Layer: 0
-  m_Name: checkpoint (3)
+  m_Name: pathpoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7058543946389504292}
   m_Layer: 0
-  m_Name: checkpoint (25)
+  m_Name: pathpoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7510838786470072566}
   m_Layer: 0
-  m_Name: checkpoint (30)
+  m_Name: pathpoint (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8229756849064138512}
   m_Layer: 0
-  m_Name: checkpoint (31)
+  m_Name: pathpoint (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,7 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8325373805353377890}
   m_Layer: 0
-  m_Name: checkpoint (11)
+  m_Name: pathpoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4144117736061958264}
   m_Layer: 0
-  m_Name: checkpoint (37)
+  m_Name: pathpoint (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4104455196290308007}
   m_Layer: 0
-  m_Name: checkpoint (24)
+  m_Name: pathpoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2952933100059232216}
   m_Layer: 0
-  m_Name: checkpoint (26)
+  m_Name: pathpoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -546,7 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2845362077260740822}
   m_Layer: 0
-  m_Name: checkpoint (19)
+  m_Name: pathpoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7060038574057386145}
   m_Layer: 0
-  m_Name: checkpoint (2)
+  m_Name: pathpoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1373109734116876893}
   m_Layer: 0
-  m_Name: checkpoint (36)
+  m_Name: pathpoint (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278836543938685067}
   m_Layer: 0
-  m_Name: checkpoint (35)
+  m_Name: pathpoint (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308696791565634937}
   m_Layer: 0
-  m_Name: checkpoint (21)
+  m_Name: pathpoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2803248304605457141}
   m_Layer: 0
-  m_Name: checkpoint (12)
+  m_Name: pathpoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,7 +732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653164522812687890}
   m_Layer: 0
-  m_Name: checkpoint (28)
+  m_Name: pathpoint (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,7 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4773759976966693329}
   m_Layer: 0
-  m_Name: checkpoint (23)
+  m_Name: pathpoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,7 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6379142445209319360}
   m_Layer: 0
-  m_Name: checkpoint (4)
+  m_Name: pathpoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,7 +825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3255465017328786434}
   m_Layer: 0
-  m_Name: checkpoint (15)
+  m_Name: pathpoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566900907644678428}
   m_Layer: 0
-  m_Name: checkpoint (8)
+  m_Name: pathpoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,7 +887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4946893676169688501}
   m_Layer: 0
-  m_Name: checkpoint (5)
+  m_Name: pathpoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -918,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034561005553887482}
   m_Layer: 0
-  m_Name: checkpoint (18)
+  m_Name: pathpoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -949,7 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8839482996325667762}
   m_Layer: 0
-  m_Name: checkpoint (17)
+  m_Name: pathpoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -980,7 +980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7380005488493895893}
   m_Layer: 0
-  m_Name: checkpoint (7)
+  m_Name: pathpoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,7 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3742528654021898120}
   m_Layer: 0
-  m_Name: checkpoint (9)
+  m_Name: pathpoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4317258375535083732}
   m_Layer: 0
-  m_Name: checkpoint (13)
+  m_Name: pathpoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3536754385605964933}
   m_Layer: 0
-  m_Name: checkpoint (32)
+  m_Name: pathpoint (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1854807181305199517}
   m_Layer: 0
-  m_Name: checkpoint (10)
+  m_Name: pathpoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1166,7 +1166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516806274952818218}
   m_Layer: 0
-  m_Name: checkpoint (16)
+  m_Name: pathpoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,7 +1197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4505475378442457395}
   m_Layer: 0
-  m_Name: checkpoint (27)
+  m_Name: pathpoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7116054596966861928}
   m_Layer: 0
-  m_Name: checkpoint (29)
+  m_Name: pathpoint (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,7 +1259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8963680009718081866}
   m_Layer: 0
-  m_Name: checkpoint (1)
+  m_Name: pathpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1290,7 +1290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8652508609812583050}
   m_Layer: 0
-  m_Name: checkpoint (14)
+  m_Name: pathpoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

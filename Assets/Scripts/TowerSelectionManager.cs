@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+ * TODO: TowerSelectionManager description
+ */
+
 public class TowerSelectionManager : MonoBehaviour
 {
-    public static TowerSelectionManager Instance { get; private set; }
+    [SerializeField] private InputAction _escapePress;
 
     [SerializeField] private LayerMask _towerLayerMask;
     [SerializeField] private LayerMask _towerPlacementLayerMask;
@@ -16,6 +20,8 @@ public class TowerSelectionManager : MonoBehaviour
 
     private const float _deltaHSVValue = 0.2f;
 
+    public static TowerSelectionManager Instance { get; private set; }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,6 +31,18 @@ public class TowerSelectionManager : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    private void OnEnable()
+    {
+        _escapePress.performed += OnEscapePress;
+        _escapePress.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _escapePress.Disable();
+        _escapePress.performed -= OnEscapePress;
     }
 
     private void Update()
@@ -51,7 +69,7 @@ public class TowerSelectionManager : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, _towerPlacementLayerMask);
 
         // If hit is detected, the ray hit a valid spot
-        
+
         if (rayHit)
         {
             // Check with the help of colliders if the selected tower doesn't overlap other towers
@@ -74,10 +92,10 @@ public class TowerSelectionManager : MonoBehaviour
                     // Dropped tower becomes tower that is currently selected on the map
 
                     _towerSelectedCurrentlyInMap = _selectedInUITowerInstance;
+                    _towerSelectedCurrentlyInMap.GetComponent<ITower>().PlaceOnMap();
 
-                    // The range isn't by default visible and tower isn't by default selected (darkened)
+                    // The tower isn't by default selected (darkened)
 
-                    SetTowerRangeVisibility(_towerSelectedCurrentlyInMap, true);
                     SetTowerDarkening(_towerSelectedCurrentlyInMap, true);
 
                     // Resetting the state of the variables
@@ -90,14 +108,14 @@ public class TowerSelectionManager : MonoBehaviour
             {
                 // Dropping tower not allowed
 
-                _selectedInUITowerInstance.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.95f);
+                _selectedInUITowerInstance.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
         else
         {
             // Dropping tower not allowed
 
-            _selectedInUITowerInstance.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.95f);
+            _selectedInUITowerInstance.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 
@@ -116,7 +134,7 @@ public class TowerSelectionManager : MonoBehaviour
 
             GameObject towerHit = rayHit.collider.gameObject;
 
-            // If cursor hovers over the currently selected tower or the same tower as in the previous frame - do nothing
+            // If cursor hovers over the currently selected tower or the same tower as in the previous frame, do nothing
 
             if (towerHit != _towerSelectedCurrentlyInMap && towerHit != _unselectedTowerCurrentlyUnderCursorInMap)
             {
@@ -178,7 +196,7 @@ public class TowerSelectionManager : MonoBehaviour
 
     private void SetTowerRangeVisibility(GameObject tower, bool towerRangeVisible)
     {
-        tower.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = towerRangeVisible ? true : false;
+        tower.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = towerRangeVisible;
     }
 
     private void SetTowerDarkening(GameObject tower, bool towerDarkened)
@@ -186,6 +204,24 @@ public class TowerSelectionManager : MonoBehaviour
         SpriteRenderer spriteRenderer = tower.GetComponent<SpriteRenderer>();
         float coeff = towerDarkened ? -1.0f : 1.0f;
         spriteRenderer.color = Helper.ChangeHSVValue(spriteRenderer.color, coeff * _deltaHSVValue);
+    }
+
+    private void OnEscapePress(InputAction.CallbackContext context)
+    {
+        if (_selectedInUITowerInstance != null)
+        {
+            Destroy(_selectedInUITowerInstance);
+        }
+
+        if (_towerSelectedCurrentlyInMap != null)
+        {
+            SetTowerRangeVisibility(_towerSelectedCurrentlyInMap, false);
+            SetTowerDarkening(_towerSelectedCurrentlyInMap, false);
+        }
+
+        _selectedInUITowerPrefab = null;
+        _selectedInUITowerInstance = null;
+        _towerSelectedCurrentlyInMap = null;
     }
 
     public void SelectTowerFromUI(GameObject towerPrefab)
@@ -197,7 +233,9 @@ public class TowerSelectionManager : MonoBehaviour
             Destroy(_selectedInUITowerInstance);
         }
 
-        _selectedInUITowerInstance = Instantiate(_selectedInUITowerPrefab, Helper.GetCursorWorldPosition(0.0f), Quaternion.identity);
+        _selectedInUITowerInstance = Instantiate(_selectedInUITowerPrefab);
+        _selectedInUITowerInstance.transform.position = (Vector2)Helper.GetCursorWorldPosition(0.0f);
+        SetTowerRangeVisibility(_selectedInUITowerInstance, true);
 
         _towerSelectedCurrentlyInMap = null;
         _unselectedTowerCurrentlyUnderCursorInMap = null;
@@ -206,7 +244,7 @@ public class TowerSelectionManager : MonoBehaviour
 
 /*
  * 
- * A layer mask IS NOT the same thing as a layer number
+ * Layer mask IS NOT the same thing as layer number
  * 
  * What is layer mask?
  * 0000 0000 0000 0000 0000 0000 0000 0000

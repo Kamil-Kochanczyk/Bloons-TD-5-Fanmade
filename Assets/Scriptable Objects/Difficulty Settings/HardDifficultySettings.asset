@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2b9f514f74bc74687b0258daf524d3, type: 3}
+  m_Name: HardDifficultySettings
+  m_EditorClassIdentifier: 
+  difficulty: 2
+  money: 250
+  lives: 1
+  roundsBeforeFreeplay: 5
+  costsModifier: 1.5
+  bloonSpeedModifier: 2
+  roundWaves:
+  - {fileID: 11400000, guid: 02c71de228960cd41856d124a6191d28, type: 2}
+  - {fileID: 11400000, guid: 1fac7cb8820ea3f4ba895e3239823b1e, type: 2}
+  - {fileID: 11400000, guid: 68c99cc88d37294419fb63d142f21ef2, type: 2}
+  - {fileID: 11400000, guid: 60261030f9e71d644a98bfd97264e5b6, type: 2}
+  - {fileID: 11400000, guid: fb5766bf88dccda44905446d55e6eab7, type: 2}

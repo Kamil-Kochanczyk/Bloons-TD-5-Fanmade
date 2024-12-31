@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*
+ * This file allows the buttons from the canvas to work
+ */
+
 public class TowerSelector : MonoBehaviour
 {
     public void SelectTower(GameObject towerPrefab)

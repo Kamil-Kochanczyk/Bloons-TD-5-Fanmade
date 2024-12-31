@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7773714484333203246}
   - component: {fileID: 1828329635656812596}
+  - component: {fileID: -7350416976468205125}
   - component: {fileID: 315723641217615719}
-  - component: {fileID: 4806301375662990145}
+  - component: {fileID: -2040739742852409232}
   m_Layer: 6
   m_Name: dart-monkey
   m_TagString: Untagged
@@ -90,6 +91,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-7350416976468205125
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656725359221620946}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &315723641217615719
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,7 +154,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.07000001}
   m_Radius: 0.113195725
---- !u!114 &4806301375662990145
+--- !u!114 &-2040739742852409232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

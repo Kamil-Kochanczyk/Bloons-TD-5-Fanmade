@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1472198699258762065}
   - component: {fileID: 1957980506221289232}
   - component: {fileID: -6861327911191231983}
-  - component: {fileID: -1450331284112005408}
+  - component: {fileID: 6320978047169857504}
   m_Layer: 7
   m_Name: red-bloon
   m_TagString: Untagged
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228f7c66db7a6334399785232cee0ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1450331284112005408
+--- !u!114 &6320978047169857504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

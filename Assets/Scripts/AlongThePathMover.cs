@@ -1,72 +1,124 @@
-using System;
+using System.Collections;
 using UnityEngine;
+
+/*
+ * TODO: AlongThePathMover description
+ */
 
 public class AlongThePathMover : MonoBehaviour
 {
-    private string _pathGameObjectName = "path";
-    private Transform[] _path = null;
-    private int _targetPathPointIndex = -1;
-    private const float _speed = 1.0f;
+    private IBloon _bloon;
     private Rigidbody2D _rb;
+    private float _speed;
+    private int _targetPathPointIndex;
+    private bool _isOnThePath;
+    private bool _isGoingBackALittle;
 
-    private void Start()
+    public int TargetPathPointIndex => _targetPathPointIndex;
+
+    private void Awake()
     {
-        try
-        {
-            _rb = GetComponent<Rigidbody2D>();
-            SetPath();
-            transform.position = _path[0].position;
-            _targetPathPointIndex = 1;
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e.Message);
-        }
+        _bloon = GetComponent<IBloon>();
+        _rb = GetComponent<Rigidbody2D>();
+        _speed = LevelManager.Instance.BloonSpeedModifier * _bloon.DefaultSpeed;
+        _targetPathPointIndex = -1;
+        _isOnThePath = false;
+        _isGoingBackALittle = false;
     }
 
     private void FixedUpdate()
     {
-        MoveAlongThePath();
-    }
-
-    private void SetPath()
-    {
-        GameObject pathGameObject = GameObject.Find(_pathGameObjectName);
-
-        if (pathGameObject == null)
+        if (_isOnThePath && !_isGoingBackALittle)
         {
-            throw new Exception($"SetPath: GameObject with name \"{_pathGameObjectName}\" doesn't exist.");
-        }
-
-        Transform path = pathGameObject.transform;
-
-        int childCount = path.childCount;
-
-        if (childCount < 2)
-        {
-            throw new Exception($"SetPath: GameObject with name \"{_pathGameObjectName}\" has to have at least two children.");
-        }
-
-        _path = new Transform[childCount];
-
-        for (int i = 0; i < childCount; i++)
-        {
-            _path[i] = path.GetChild(i);
+            MoveAlongThePath();
         }
     }
 
     private void MoveAlongThePath()
     {
-        _rb.MovePosition(Vector2.MoveTowards(transform.position, _path[_targetPathPointIndex].position, _speed * Time.deltaTime));
+        Vector2 targetPosition = PathManager.Instance.GetPathPoint(_targetPathPointIndex).position;
 
-        if (Vector2.Distance(transform.position, _path[_targetPathPointIndex].position) <= _speed * Time.deltaTime)
+        _rb.MovePosition(Vector2.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime));
+
+        if (Vector2.Distance(transform.position, targetPosition) <= _speed * Time.deltaTime)
         {
             _targetPathPointIndex++;
 
-            if (_targetPathPointIndex >= _path.Length)
+            if (_targetPathPointIndex > PathManager.Instance.DiePointIndex)
             {
-                Destroy(gameObject);
+                _targetPathPointIndex = -1;
+                _isOnThePath = false;
+                BloonsPoolsManager.Instance.ReturnBloon(gameObject);
+                PathManager.Instance.RemoveBloonFromPath();
+                LevelManager.Instance.LoseLives(_bloon.LivesWorth);
             }
         }
+    }
+
+    public void StartMovingFromSpawnPoint()
+    {
+        transform.position = PathManager.Instance.GetPathPoint(PathManager.Instance.SpawnPointIndex).position;
+        _targetPathPointIndex = PathManager.Instance.SpawnPointIndex + 1;
+        _isOnThePath = true;
+    }
+
+    public void StartMovingFromPosition(Vector2 position, int targetPathPointIndex)
+    {
+        transform.position = position;
+        _targetPathPointIndex = targetPathPointIndex;
+        _isOnThePath = true;
+    }
+
+    public void SlowDown(float slowingFactor, float seconds)
+    {
+        float originalSpeed = _speed;
+        _speed *= slowingFactor;
+        StartCoroutine(SlowDownCanceller(originalSpeed, seconds));
+    }
+
+    public void Stop(float seconds)
+    {
+        float originalSpeed = _speed;
+        _speed = 0.0f;
+        StartCoroutine(StopCanceller(originalSpeed, seconds));
+    }
+
+    public void GoBackALittle()
+    {
+        int newTargetPathPointIndex = _targetPathPointIndex - 5;
+
+        if (newTargetPathPointIndex < 0)
+        {
+            newTargetPathPointIndex = 0;
+        }
+
+        Vector2 targetPosition = PathManager.Instance.GetRandomPositionBetweenThisAndNext(newTargetPathPointIndex);
+
+        StartCoroutine(Regresser(targetPosition));
+    }
+
+    private IEnumerator SlowDownCanceller(float originalSpeed, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _speed /= originalSpeed;
+    }
+
+    private IEnumerator StopCanceller(float originalSpeed, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _speed = originalSpeed;
+    }
+
+    private IEnumerator Regresser(Vector2 targetPosition)
+    {
+        _isGoingBackALittle = true;
+
+        while (Vector2.Distance(transform.position, targetPosition) > _speed * Time.deltaTime)
+        {
+            _rb.MovePosition(Vector2.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime));
+            yield return null;
+        }
+
+        _isGoingBackALittle = false;
     }
 }
